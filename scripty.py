@@ -30,9 +30,6 @@ class Game:
         print("Games ends with one Winner!")
         exit()
 
-
-
-
 class Player:
     counter = 1
 
@@ -97,7 +94,7 @@ print("")
 #Creating player instances 
 player_one = Player()
 player_two = Player()
-#playingfield
+#playingfield showing fields and numbers
 print("")
 print("The shown numbers are the Input you have to choose to paint your Symbol into the field ")
 print("")
@@ -121,76 +118,76 @@ else:
 
 if first_player == 1:
 
-  field1 = input("Player 1: "+ player_one.player_name + " choose your Field:")
+  field1 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field1)] = player_one.player_symbol
   game.print_playing_field()
 
-  field2 = input("Player 2: "+ player_two.player_name + " choose your Field:")
+  field2 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field2)] = player_two.player_symbol
   game.print_playing_field()
 
-  field3 = input("Player 1 "+ player_one.player_name + " choose your Field:")
+  field3 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field3)] = player_one.player_symbol
   game.print_playing_field()
 
-  field4 = input("Player 2: "+ player_two.player_name + " choose your Field:")
+  field4 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field4)] = player_two.player_symbol
   game.print_playing_field()
 
-  field5 = input("Player 1 "+ player_one.player_name + " choose your Field:")
+  field5 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field5)] = player_one.player_symbol
   game.print_playing_field()
 
-  field6 = input("Player 2: "+ player_two.player_name + " choose your Field:")
+  field6 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field6)] = player_two.player_symbol
   game.print_playing_field()
 
-  field7 = input("Player 1: "+ player_one.player_name + " choose your Field:")
+  field7 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field7)] = player_one.player_symbol
   game.print_playing_field()
 
-  field8 = input("Player 2: "+ player_two.player_name + " choose your Field:")
+  field8 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field8)] = player_two.player_symbol
   game.print_playing_field()
   
-  field9 = input("Player 1: "+ player_one.player_name + " choose your Field:")
+  field9 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field9)] = player_one.player_symbol
   game.print_playing_field()
 else:
  
-  field1 = input("Player 1: "+ player_two.player_name + " choose your Field:")
+  field1 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field1)] = player_two.player_symbol
   game.print_playing_field()
 
-  field2 = input("Player 2: "+ player_one.player_name + " choose your Field:")
+  field2 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field2)] = player_one.player_symbol
   game.print_playing_field()
 
-  field3 = input("Player 1 "+ player_two.player_name + " choose your Field:")
+  field3 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field3)] = player_two.player_symbol
   game.print_playing_field()
 
-  field4 = input("Player 2: "+ player_one.player_name + " choose your Field:")
+  field4 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field4)] = player_one.player_symbol
   game.print_playing_field()
 
-  field5 = input("Player 1 "+ player_two.player_name + " choose your Field:")
+  field5 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field5)] = player_two.player_symbol
   game.print_playing_field()
 
-  field6 = input("Player 2: "+ player_one.player_name + " choose your Field:")
+  field6 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field6)] = player_one.player_symbol
   game.print_playing_field()
 
-  field7 = input("Player 1: "+ player_two.player_name + " choose your Field:")
+  field7 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field7)] = player_two.player_symbol
   game.print_playing_field()
 
-  field8 = input("Player 2: "+ player_one.player_name + " choose your Field:")
+  field8 = input("Player "+ player_one.player_name + " choose your Field:")
   game.game_field[int(field8)] = player_one.player_symbol
   game.print_playing_field()
   
-  field9 = input("Player 1: "+ player_two.player_name + " choose your Field:")
+  field9 = input("Player "+ player_two.player_name + " choose your Field:")
   game.game_field[int(field9)] = player_two.player_symbol
   game.print_playing_field() 
 
