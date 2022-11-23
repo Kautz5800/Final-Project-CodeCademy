@@ -5,6 +5,11 @@ from random import randrange
 class Game:
     def __init__(self):
       self.game_field = {1:" ", 2:" ", 3:" ", 4:" ", 5:" ",6:" ",7:" ",8:" ",9:" "}
+      self.finished = False
+      self.current_player = int()
+
+    def __repr__(self):
+      return "A Game of Tic-Tac-Toe!"
 
     def check_win(self):
       won = False
@@ -18,6 +23,7 @@ class Game:
         won = True
       elif self.game_field[3] == self.game_field[5] and self.game_field[3] == self.game_field[7] and self.game_field[7] != " ":
         won = True
+      self.finished = won
       return won
 
     def print_playing_field(self):
@@ -28,17 +34,35 @@ class Game:
       print("  " + self.game_field[7] + "  |  " + self.game_field[8] + "  |  " + self.game_field[9])
       if Game.check_win(self):
         print("Games ends with one Winner!")
-        exit()
+        self.finished = True
+        exit()   
+
+    def player_input(self, player):
+      self.current_player = player.counter
+      result = None
+      input_value = input("Player "+ player.player_name + " choose your Field:")
+      while result is None:
+        if game.game_field[int(input_value)] != " ":
+          input_value = input("Player "+ player.player_name + " choose your Field:")
+          continue
+        else:
+          result = input_value
+          break
+      self.game_field[int(result)] = player.player_symbol
+      self.print_playing_field() 
 
 class Player:
     counter = 1
 
     def __init__(self):
-      self.player_symbol = ""
       self.player_name = self.set_name()
       self.player_symbol = self.set_symbol()
       self.counter = Player.counter
       Player.counter += 1
+
+    def __repr__(self):
+      return "Player_Name: " + self.player_name + " Player_Symbol:" + self.player_symbol
+      return f"<Test player_name:{self.player_name} player_symbol:{self.self.player_symbol}>"
   
     def set_name(self):
       result = None  
@@ -84,16 +108,16 @@ class Player:
           result = input("Player " + str(Player.counter) + " the choosen symbol is already in use!. Try again: ")
       return result
 
+#Creating player and game instances 
 game = Game()
-#Intro
+player_one = Player()
+player_two = Player()
 
+#Intro
 print("The Tic-Tac-Toe Game!")
 print("")
 print("Who ist goning to play?")
 print("")
-#Creating player instances 
-player_one = Player()
-player_two = Player()
 #playingfield showing fields and numbers
 print("")
 print("The shown numbers are the Input you have to choose to paint your Symbol into the field ")
@@ -109,86 +133,19 @@ print("")
 
 #random number in range of counter to determine the starting player. player.counter every game between 1 and 2
 first_player = randrange(1, 3, 1)
-second_player = 1 if first_player != 1 else 2
+#second_player = 1 if first_player != 1 else 2
 #using the player.counter
 if first_player == player_one.counter:
   print(player_one.player_name + " ist the first Player.")
 else:
   print(player_two.player_name + " ist the first Player.")
+game.current_player = first_player
+player = player_one if game.current_player == 1 else player_two
 
-if first_player == 1:
-
-  field1 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field1)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field2 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field2)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field3 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field3)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field4 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field4)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field5 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field5)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field6 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field6)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field7 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field7)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field8 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field8)] = player_two.player_symbol
-  game.print_playing_field()
-  
-  field9 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field9)] = player_one.player_symbol
-  game.print_playing_field()
-else:
- 
-  field1 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field1)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field2 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field2)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field3 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field3)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field4 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field4)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field5 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field5)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field6 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field6)] = player_one.player_symbol
-  game.print_playing_field()
-
-  field7 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field7)] = player_two.player_symbol
-  game.print_playing_field()
-
-  field8 = input("Player "+ player_one.player_name + " choose your Field:")
-  game.game_field[int(field8)] = player_one.player_symbol
-  game.print_playing_field()
-  
-  field9 = input("Player "+ player_two.player_name + " choose your Field:")
-  game.game_field[int(field9)] = player_two.player_symbol
-  game.print_playing_field() 
-
-
+#loop?! questioning for Input for the playingfield
+while not game.finished:
+  game.player_input(player)
+  if player == player_one:
+    player = player_two
+  else:
+    player = player_one
