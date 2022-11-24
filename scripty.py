@@ -33,11 +33,13 @@ class Game:
       return won
 
     def print_playing_field(self):
+      print("")
       print("  " + self.game_field[1] + "  |  " + self.game_field[2] + "  |  " + self.game_field[3])
       print("-----------------")
       print("  " + self.game_field[4] + "  |  " + self.game_field[5] + "  |  " + self.game_field[6])
       print("-----------------")
       print("  " + self.game_field[7] + "  |  " + self.game_field[8] + "  |  " + self.game_field[9])
+      print("")
       if Game.check_win(self):
         print("Games ends with one Winner!")
         self.finished = True
