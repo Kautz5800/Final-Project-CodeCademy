@@ -23,6 +23,12 @@ class Game:
         won = True
       elif self.game_field[3] == self.game_field[5] and self.game_field[3] == self.game_field[7] and self.game_field[7] != " ":
         won = True
+      elif self.game_field[1] == self.game_field[4] and self.game_field[4] == self.game_field[7] and self.game_field[7] != " ":
+        won = True
+      elif self.game_field[2] == self.game_field[5] and self.game_field[5] == self.game_field[8] and self.game_field[8] != " ":
+        won = True
+      elif self.game_field[3] == self.game_field[6] and self.game_field[6] == self.game_field[9] and self.game_field[9] != " ":
+        won = True
       self.finished = won
       return won
 
@@ -133,7 +139,6 @@ print("")
 
 #random number in range of counter to determine the starting player. player.counter every game between 1 and 2
 first_player = randrange(1, 3, 1)
-#second_player = 1 if first_player != 1 else 2
 #using the player.counter
 if first_player == player_one.counter:
   print(player_one.player_name + " ist the first Player.")
