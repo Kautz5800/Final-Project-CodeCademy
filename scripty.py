@@ -87,6 +87,8 @@ class Game:
       self.game_field[int(result)] = player.player_symbol
       self.print_playing_field() 
 
+# Player class with class var counter which is used to specify the player number
+
 class Player:
     counter = 1
 
@@ -95,11 +97,14 @@ class Player:
       self.player_symbol = self.set_symbol()
       self.counter = Player.counter
       Player.counter += 1
-
+     
+    # the "right" way to use __repr__() as i was told
     def __repr__(self):
-      return "Player_Name: " + self.player_name + " Player_Symbol:" + self.player_symbol
-      return f"<Test player_name:{self.player_name} player_symbol:{self.self.player_symbol}>"
-  
+      return f"<Test player_name:{self.player_name} player_symbol:{self.player_symbol} counter:{self.counter}>"
+    
+    # Asking for Player input to set a player name  
+    # while loop  for checking for an valid input
+
     def set_name(self):
       result = None  
       input_value = input("Player " + str(Player.counter) + " choose your player name (only alphanumeric): ")  
@@ -115,6 +120,9 @@ class Player:
           break  
       return result
 
+    # Asking for Player input to set a player symbol  
+    # while loop  for checking for an valid input
+
     def set_symbol(self):
       result = None
       input_value = input(self.player_name + " please enter a single letter as your Symbol: ")
@@ -129,6 +137,8 @@ class Player:
           result = input_value
           break  
       return result
+
+    # check if choosen name is in use  
     
     def check_player_name(self, counter, name):
       result = name
@@ -136,6 +146,8 @@ class Player:
         while result == player_one.player_name:
           result = input("Player " + str(Player.counter) + " the choosen name is already in use!. Try again: ")
       return result
+
+    # check if choosen symbol is in use
 
     def check_player_symbol(self, counter, symbol):
       result = symbol
@@ -169,15 +181,17 @@ print("")
 
 #random number in range of counter to determine the starting player. player.counter every game between 1 and 2
 first_player = randrange(1, 3, 1)
-#using the player.counter
+#using the player.counter to set the order of events
 if first_player == player_one.counter:
   print(player_one.player_name + " ist the first Player.")
 else:
   print(player_two.player_name + " ist the first Player.")
 game.current_player = first_player
+
+#setting variable player for futher use
 player = player_one if game.current_player == 1 else player_two
 
-#loop?! questioning for Input for the playingfield
+#game loop
 while not game.finished:
   game.player_input(player)
   if player == player_one:
