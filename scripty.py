@@ -156,13 +156,18 @@ class Player:
           result = input("Player " + str(Player.counter) + " the choosen symbol is already in use!. Try again: ")
       return result
 
-#Creating player and game instances 
-game = Game()
-player_one = Player()
-player_two = Player()
-
 #Intro
-print("The Tic-Tac-Toe Game!")
+print("")
+print("#########  #########    #####    #########     #        #####    #########     #####     #########")
+print("    #          #      ##     ##      #        # #     ##     ##      #       ##     ##   #        ")
+print("    #          #      #              #       #   #    #              #      #         #  #        ")
+print("    #          #      #              #      #     #   #              #      #         #  #########")
+print("    #          #      #              #     #########  #              #      #         #  #        ")
+print("    #          #      ##     ##      #     #       #  ##     ##      #       ##     ##   #        ")
+print("    #      #########    #####        #     #       #    #####        #         #####     #########")
+print("--------------------------------------------------------------------------------------------------")
+print("A Tic-Tac-Toe Game!")
+print("--------------------------------------------------------------------------------------------------")
 print("")
 print("Who ist goning to play?")
 print("")
@@ -178,6 +183,12 @@ print("  7  |  8  |  9  ")
 print("")
 print("I am going to randomly select the starting player!")
 print("")
+
+
+#Creating player and game instances 
+game = Game()
+player_one = Player()
+player_two = Player()
 
 #random number in range of counter to determine the starting player. player.counter every game between 1 and 2
 first_player = randrange(1, 3, 1)
