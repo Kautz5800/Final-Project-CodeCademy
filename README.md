@@ -1,18 +1,3 @@
----
-jupyter:
-  jupytext:
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.14.1
-  kernelspec:
-    display_name: Python 3
-    language: python
-    name: python3
----
-
-<!-- #region -->
 # Codecademy Final Project
 
 This contains code and an example of the console outputs.
@@ -303,4 +288,7 @@ Player 2 choose your Field:
 Games ends with one Winner!
 ```
 
+### Jupytext
+
+I used https://github.com/mwouts/jupytext to convert the Jupyter Playbook into a Markdown Readme. 
 
